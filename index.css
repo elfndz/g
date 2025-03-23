@@ -246,5 +246,5 @@ body {
 
 
 .question{
-    padding-left: 44%;
+    position: inherit;
 }
