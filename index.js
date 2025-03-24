@@ -12,8 +12,8 @@ yes.click (function(){
 })
 
 no.addEventListener('mouseover', function(){
-    let randX = Math.random() * 60;
-    let randY = Math.random() * 80;
+    let randX = Math.random() * 50;
+    let randY = Math.random() * 50;
 
     no.style.left = randX + '%';
     no.style.top = randX + '%';
