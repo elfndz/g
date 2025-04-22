@@ -19,7 +19,21 @@ function updateDays() {
     const remainingDaysAfterYears = totalDays % 365.25;
     const months = Math.floor(remainingDaysAfterYears / 30.44); // Average days in a month
     const days = Math.floor(remainingDaysAfterYears % 30.44);
+
+        let resultText = '';
+    if (years > 0) {
+      resultText += `${years} year${years > 1 ? 's' : ''}, `;
+    }
+    if (months > 0) {
+      resultText += `${months} month${months > 1 ? 's' : ''}, `;
+    }
+    resultText += `${days} day${days > 1 ? 's' : ''}`;
   
+    document.getElementById('days').textContent = resultText;
+  }
+  
+  updateDays(); // Update immediately when the page loads
+  setInterval(updateDays, 1000 * 60 * 60 * 24); // Update every day
     
 envelope.click(function(){
     open();
