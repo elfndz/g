@@ -3,6 +3,24 @@ let no = document.getElementById('no');
 var yes = $("#yes");
 var envelope = $("#envelope");
 
+function updateDays() {
+    const startDate = new Date('2025-02-24'); // Replace with your actual start date (YYYY-MM-DD)
+    const today = new Date();
+  
+    if (today < startDate) {
+      document.getElementById('days').textContent = "Our journey hasn't started yet!";
+      return;
+    }
+  
+    const totalMilliseconds = today.getTime() - startDate.getTime();
+    const totalDays = Math.floor(totalMilliseconds / (1000 * 3600 * 24));
+  
+    const years = Math.floor(totalDays / 365.25); // Account for leap years
+    const remainingDaysAfterYears = totalDays % 365.25;
+    const months = Math.floor(remainingDaysAfterYears / 30.44); // Average days in a month
+    const days = Math.floor(remainingDaysAfterYears % 30.44);
+  
+    
 envelope.click(function(){
     open();
 })
